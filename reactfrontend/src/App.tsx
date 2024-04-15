@@ -3,15 +3,11 @@ import { useState } from 'react';
 import ApiClient from "./ApiClient";
 
 const App = () => {
-  const [ message, getMessage ] = useState('');
-  
-  const getApiResponse = (response: any) => {
-    getMessage(response);
-  };
+  const [ message, setMessage ] = useState('');
 
   return (
     <div>
-      <ApiClient getApiResponse={getApiResponse} />
+      <ApiClient setMessage={setMessage} />
       <h1>Vite + React</h1>   
       <p>
         {message}
